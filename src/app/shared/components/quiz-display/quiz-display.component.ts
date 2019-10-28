@@ -1,12 +1,13 @@
 import { Component, OnInit,HostListener,OnDestroy } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { Router } from '@angular/router';
-import { StudentService, AppService, CourseService,AuthService,QuizService,SocketService} from '../../shared.module';
+import { StudentService, AppService,QuizService,SocketService} from '../../shared.module';
 declare var jQuery:any;
 @Component({
   selector: 'app-quiz-display',
   templateUrl: './quiz-display.component.html'
 })
+
 export class QuizDisplayComponent implements OnInit,OnDestroy {
 	public quiz = {
         id: 0,
@@ -67,10 +68,6 @@ export class QuizDisplayComponent implements OnInit,OnDestroy {
 
 	public constructor(public  localStorage: LocalStorageService,public  router: Router,public quizService: QuizService,
 		public appService: AppService,public socketService: SocketService,public studentService: StudentService) {
-		localStorage = null
-		router = null
-		quizService = null
-		studentService = null
 		socketService.consumeEventOnJoinedQuiz();
         socketService.invokeJoinedQuiz.subscribe(result => {
             if (this.quiz_code == result['quiz_code']) {
