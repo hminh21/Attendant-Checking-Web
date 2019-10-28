@@ -65,7 +65,12 @@ export class QuizDisplayComponent implements OnInit,OnDestroy {
 		
 	}
 
-	public constructor(public appService: AppService,public socketService: SocketService) {
+	public constructor(public  localStorage: LocalStorageService,public  router: Router,public quizService: QuizService,
+		public appService: AppService,public socketService: SocketService,public studentService: StudentService) {
+		localStorage = null
+		router = null
+		quizService = null
+		studentService = null
 		socketService.consumeEventOnJoinedQuiz();
         socketService.invokeJoinedQuiz.subscribe(result => {
             if (this.quiz_code == result['quiz_code']) {
