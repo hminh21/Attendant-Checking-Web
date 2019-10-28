@@ -5,6 +5,7 @@ import {TeacherService} from '../../services/teachers.service'
 import {AppService} from '../../services/app.service'
 import {ExcelService} from '../../services/excel.service'
 import {ScheduleService} from '../../services/schedule.service'
+import {StudentService} from '../../services/student.service'
 declare var jQuery: any;
 
 @Component({
