@@ -1,7 +1,12 @@
 import { Component, OnInit,HostListener,OnDestroy } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { Router } from '@angular/router';
-import { StudentService, AppService,QuizService,SocketService} from '../../shared.module';
+//import { StudentService, AppService, CourseService,AuthService,QuizService,SocketService} from '../../shared.module';
+import {SocketService} from '../../services/socket.service'
+import {StudentService} from '../../services/student.service'
+import {AppService} from '../../services/app.service'
+import {QuizService} from '../../services/quiz.service'
+
 declare var jQuery:any;
 @Component({
   selector: 'app-quiz-display',
