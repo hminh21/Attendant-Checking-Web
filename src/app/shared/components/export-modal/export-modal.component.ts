@@ -1,6 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FileUploader } from "ng2-file-upload/ng2-file-upload";
-import { CourseService,TeacherService ,StudentService, AppService,ExcelService,ScheduleService  } from '../../shared.module';
+//import { CourseService,TeacherService ,StudentService, AppService,ExcelService,ScheduleService  } from '../../shared.module';
+import {CourseService} from '../../services/courses.service'
+import {TeacherService} from '../../services/teachers.service'
+import {AppService} from '../../services/app.service'
+import {ExcelService} from '../../services/excel.service'
+import {ScheduleService} from '../../services/schedule.service'
+import {StudentService} from '../../services/student.service'
 declare var jQuery :any;
 
 @Component({
